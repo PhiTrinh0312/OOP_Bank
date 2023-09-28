@@ -19,6 +19,7 @@ int main() {
         cout << "2. Rut tien" << endl;
         cout << "3. Gui tien vao tai khoan ban than" << endl;
         cout << "4. Gui tien vao mot tai khoan khac" << endl;
+        cout << "5. Hien thi thong tin tai khoan "<<endl;
         cout << "Chon dich vu: ";
         cin >> x;
 
@@ -124,6 +125,28 @@ int main() {
                     cout << "Khach hang khong ton tai." << endl;
                 }
                 break;
+
+            case 5:
+                 cin.ignore();
+                cout << "Nhap ten cua ban: ";
+                getline(cin, name);
+                cout << "Nhap so tai khoan: ";
+                cin >> number;
+                cout << "Nhap ID: ";
+                cin >> id;
+                found = false;
+                 for (int i = 0; i < 100; i++) {
+                    if (customer[i].getNumber() == number && customer[i].getId() == id && customer[i].getName() == name) {
+                        customer[i].display();
+                        found = true;
+                        break;
+                    }
+                }
+                 if (!found) {
+                cout << "Khach hang khong ton tai." << endl;
+            }
+            break;
+
         }
         i--;
     }
